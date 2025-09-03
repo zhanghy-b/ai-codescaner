@@ -1,0 +1,1167 @@
+{
+  "file_path": "E:/gip/Source/GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+  "ast": null,
+  "functions": [
+    {
+      "node_id": "GMPPDFViewClipedData()",
+      "name": "GMPPDFViewClipedData()",
+      "return_type": "<clang.cindex.Type object at 0x00000258EE5DB8C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPCommon\\GMPPDFCommonData.h",
+        "line": 21,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::tr(const char *, const char *, int)",
+      "name": "GMPPdfDragBoxSelector::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258EE5DA3C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.h",
+        "line": 11,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::trUtf8(const char *, const char *, int)",
+      "name": "GMPPdfDragBoxSelector::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258EE5D9440>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.h",
+        "line": 11,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::setResolution(const float &)",
+      "name": "GMPPdfDragBoxSelector::setResolution(const float &)",
+      "return_type": "<clang.cindex.Type object at 0x00000258FB14DFC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.h",
+        "line": 17,
+        "column": 7
+      },
+      "called_functions": [],
+      "body": "{ m_fResolution = fResolution; }"
+    },
+    {
+      "node_id": "GMPPDFPageMatrix(const float, const float)",
+      "name": "GMPPDFPageMatrix(const float, const float)",
+      "return_type": "<clang.cindex.Type object at 0x00000258F00CD140>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFPage.h",
+        "line": 11,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GMPPDFPageMatrix::resolution()",
+      "name": "GMPPDFPageMatrix::resolution()",
+      "return_type": "<clang.cindex.Type object at 0x00000258FD4D8FC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFPage.h",
+        "line": 12,
+        "column": 8
+      },
+      "called_functions": [],
+      "body": "{ return m_fResolution; }"
+    },
+    {
+      "node_id": "GMPPDFPageMatrix::rotate()",
+      "name": "GMPPDFPageMatrix::rotate()",
+      "return_type": "<clang.cindex.Type object at 0x00000258FD4DB940>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFPage.h",
+        "line": 13,
+        "column": 8
+      },
+      "called_functions": [],
+      "body": "{ return m_fRotate; }"
+    },
+    {
+      "node_id": "GMPPDFPageMatrix::operator<(const GMPPDFPageMatrix &)",
+      "name": "GMPPDFPageMatrix::operator<(const GMPPDFPageMatrix &)",
+      "return_type": "<clang.cindex.Type object at 0x00000258FD4DB9C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFPage.h",
+        "line": 14,
+        "column": 7
+      },
+      "called_functions": [
+        "GMPPDFPageMatrix::rotate()",
+        "GMPPDFPageMatrix::rotate()",
+        "GMPPDFPageMatrix::resolution()",
+        "GMPPDFPageMatrix::resolution()"
+      ],
+      "body": "{\n\t\tif (!ggp::Equals(rotate(), other.rotate(), (float)0.001))\n\t\t\treturn rotate() < other.rotate();\n\t\telse\n\t\t\treturn resolution() < other.resolution();\n\t}\npriv"
+    },
+    {
+      "node_id": "IGMPPDFPage::tr(const char *, const char *, int)",
+      "name": "IGMPPDFPage::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258FD4DBAC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFPage.h",
+        "line": 27,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "IGMPPDFPage::trUtf8(const char *, const char *, int)",
+      "name": "IGMPPDFPage::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258FD4DBB40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFPage.h",
+        "line": 27,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "IGMPPDFPage::pdfDocument()",
+      "name": "IGMPPDFPage::pdfDocument()",
+      "return_type": "<clang.cindex.Type object at 0x00000258E1EB0640>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFPage.h",
+        "line": 39,
+        "column": 19
+      },
+      "called_functions": [],
+      "body": "{ return m_pPdfDocument; }"
+    },
+    {
+      "node_id": "~IGMPPDFPage()",
+      "name": "~IGMPPDFPage()",
+      "return_type": "<clang.cindex.Type object at 0x00000258F00B4AC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFPage.h",
+        "line": 43,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "IGMPPDFDocument::tr(const char *, const char *, int)",
+      "name": "IGMPPDFDocument::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258FFDF5740>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFDocument.h",
+        "line": 12,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "IGMPPDFDocument::trUtf8(const char *, const char *, int)",
+      "name": "IGMPPDFDocument::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258F24F9DC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFDocument.h",
+        "line": 12,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "IGMPPDFDocument()",
+      "name": "IGMPPDFDocument()",
+      "return_type": "<clang.cindex.Type object at 0x00000258EC5F03C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFDocument.h",
+        "line": 16,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "~IGMPPDFDocument()",
+      "name": "~IGMPPDFDocument()",
+      "return_type": "<clang.cindex.Type object at 0x00000258E1F20640>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFDocument.h",
+        "line": 17,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "~GMPPDFDocumentCreater()",
+      "name": "~GMPPDFDocumentCreater()",
+      "return_type": "<clang.cindex.Type object at 0x00000258FFE11F40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFDocument.h",
+        "line": 78,
+        "column": 13
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GMPPDFDocumentFactory()",
+      "name": "GMPPDFDocumentFactory()",
+      "return_type": "<clang.cindex.Type object at 0x00000258EE540440>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Core\\GMPPDFDocument\\GMPPDFDocument.h",
+        "line": 98,
+        "column": 5
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "IGMPPDFCustomRender(IGMPPDFViewWidget *)",
+      "name": "IGMPPDFCustomRender(IGMPPDFViewWidget *)",
+      "return_type": "<clang.cindex.Type object at 0x00000258EE52EEC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFCustomRender.h",
+        "line": 20,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "~IGMPPDFCustomRender()",
+      "name": "~IGMPPDFCustomRender()",
+      "return_type": "<clang.cindex.Type object at 0x00000258F0129640>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFCustomRender.h",
+        "line": 21,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GIPVersionInfoData(int64_t, QString)",
+      "name": "GIPVersionInfoData(int64_t, QString)",
+      "return_type": "<clang.cindex.Type object at 0x00000258F6FA0DC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPCommon\\GIPQDataStreamHelper.h",
+        "line": 110,
+        "column": 5
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GIPVersionInfoData()",
+      "name": "GIPVersionInfoData()",
+      "return_type": "<clang.cindex.Type object at 0x00000258F6F9ADC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPCommon\\GIPQDataStreamHelper.h",
+        "line": 111,
+        "column": 5
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "operator<<(QDataStream &, const GIPVersionInfoData &)",
+      "name": "operator<<(QDataStream &, const GIPVersionInfoData &)",
+      "return_type": "<clang.cindex.Type object at 0x00000258F6F0E0C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPCommon\\GIPQDataStreamHelper.h",
+        "line": 112,
+        "column": 25
+      },
+      "called_functions": [],
+      "body": "{ \n            out << rhs.m_nDataVersion << rhs.m_strProductVersion;\n            return out; \n    }"
+    },
+    {
+      "node_id": "operator>>(QDataStream &, GIPVersionInfoData &)",
+      "name": "operator>>(QDataStream &, GIPVersionInfoData &)",
+      "return_type": "<clang.cindex.Type object at 0x000002588330E440>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPCommon\\GIPQDataStreamHelper.h",
+        "line": 117,
+        "column": 25
+      },
+      "called_functions": [],
+      "body": "{\n        in >> rhs.m_nDataVersion >> rhs.m_strProductVersion;\n        return in;\n    };"
+    },
+    {
+      "node_id": "GMPPDFCustormRectRenderData()",
+      "name": "GMPPDFCustormRectRenderData()",
+      "return_type": "<clang.cindex.Type object at 0x000002588338AB40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPCellHighlight.h",
+        "line": 15,
+        "column": 5
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GMPPDFCustormRectRenderData(QString, int, QRect, QPoint, float)",
+      "name": "GMPPDFCustormRectRenderData(QString, int, QRect, QPoint, float)",
+      "return_type": "<clang.cindex.Type object at 0x00000258833A03C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPCellHighlight.h",
+        "line": 16,
+        "column": 5
+      },
+      "called_functions": [],
+      "body": "{\n        m_valid = true;\n    };"
+    },
+    {
+      "node_id": "qHash(const GMPPDFCustormRectRenderData &, uint)",
+      "name": "qHash(const GMPPDFCustormRectRenderData &, uint)",
+      "return_type": "<clang.cindex.Type object at 0x00000258FD4F2EC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPCellHighlight.h",
+        "line": 48,
+        "column": 13
+      },
+      "called_functions": [],
+      "body": "{\n    uint h = nSeed;\n    h = qHash(oKey.m_strPdfUuid, h);\n    h = qHash(oKey.m_pageNum, h);\n    h = qHash(oKey.m_oLocalRect.topLeft().x(), h);\n    h = qHash(oKey.m_oLocalRect.topLeft().y(), h);\n    h = qHash(oKey.m_oLocalRect.bottomRight().x(), h);\n    h = qHash(oKey.m_oLocalRect.bottomRight().y(), h);\n    h = qHash(oKey.m_baseRectPt.x(), h);\n    h = qHash(oKey.m_baseRectPt.y(), h);\n    h = qHash(*reinterpret_cast<const quint32*>(&oKey.m_fResolution), h);\n    h = qHash(*reinterpret_cast<const quint32*>(&oKey.m_fRotate), h);\n    h = qHash(oKey.m_nMinContentHeight, h);\n\n    for (int i = 0; i < 3; ++i) {\n        for (int j = 0; j < 3; ++j) {\n            // 将double值转换为位表示进行哈希\n            h = qHash(*reinterpret_cast<const quint64*>(&oKey.m_localMatrix.Value(i, j)), h);\n        }\n    }\n    return h;\n}"
+    },
+    {
+      "node_id": "~GMPPDFUIServiceObserverBaseData()",
+      "name": "~GMPPDFUIServiceObserverBaseData()",
+      "return_type": "<clang.cindex.Type object at 0x00000258FD4E7E40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFDocumentUIService.h",
+        "line": 19,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GMPPDFUIServiceObserverDocumentChangedData(IGMPPDFDocumentPtr, const int)",
+      "name": "GMPPDFUIServiceObserverDocumentChangedData(IGMPPDFDocumentPtr, const int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258989B1940>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFDocumentUIService.h",
+        "line": 25,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GMPPDFUIServiceObserverDocumentChangedData::activeDocument()",
+      "name": "GMPPDFUIServiceObserverDocumentChangedData::activeDocument()",
+      "return_type": "<clang.cindex.Type object at 0x00000258989B3AC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFDocumentUIService.h",
+        "line": 27,
+        "column": 21
+      },
+      "called_functions": [],
+      "body": "{\n\t\treturn m_pActiveDocument;\n\t}"
+    },
+    {
+      "node_id": "GMPPDFUIServiceObserverDocumentChangedData::activePage()",
+      "name": "GMPPDFUIServiceObserverDocumentChangedData::activePage()",
+      "return_type": "<clang.cindex.Type object at 0x00000258989BCBC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFDocumentUIService.h",
+        "line": 30,
+        "column": 6
+      },
+      "called_functions": [],
+      "body": "{ return m_nActivePage; }"
+    },
+    {
+      "node_id": "GMPPDFDocumentUIService::tr(const char *, const char *, int)",
+      "name": "GMPPDFDocumentUIService::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258989DEEC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFDocumentUIService.h",
+        "line": 38,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPDFDocumentUIService::trUtf8(const char *, const char *, int)",
+      "name": "GMPPDFDocumentUIService::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258989F6140>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFDocumentUIService.h",
+        "line": 38,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPDFPageRender::tr(const char *, const char *, int)",
+      "name": "GMPPDFPageRender::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0B40140>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFPageRender.h",
+        "line": 14,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPDFPageRender::trUtf8(const char *, const char *, int)",
+      "name": "GMPPDFPageRender::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0B53640>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFPageRender.h",
+        "line": 14,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPDFPageRender::pageNum()",
+      "name": "GMPPDFPageRender::pageNum()",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0BAFB40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFPageRender.h",
+        "line": 26,
+        "column": 6
+      },
+      "called_functions": [],
+      "body": "{ return m_nPageNum; }"
+    },
+    {
+      "node_id": "~GIPDialog()",
+      "name": "~GIPDialog()",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0C7EA40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPControls\\GIPDialog.h",
+        "line": 12,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GIPCoolDarkWidget::tr(const char *, const char *, int)",
+      "name": "GIPCoolDarkWidget::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0C7DB40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPControls\\GIPDialog.h",
+        "line": 21,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GIPCoolDarkWidget::trUtf8(const char *, const char *, int)",
+      "name": "GIPCoolDarkWidget::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0CC55C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPControls\\GIPDialog.h",
+        "line": 21,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GIPCoolDarkWidget(QWidget *)",
+      "name": "GIPCoolDarkWidget(QWidget *)",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0CDBAC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPControls\\GIPDialog.h",
+        "line": 23,
+        "column": 11
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "~GIPCoolDarkWidget()",
+      "name": "~GIPCoolDarkWidget()",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0CC6540>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPControls\\GIPDialog.h",
+        "line": 24,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GIPCoolDarkToolBar::tr(const char *, const char *, int)",
+      "name": "GIPCoolDarkToolBar::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0D04240>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPControls\\GIPDialog.h",
+        "line": 29,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GIPCoolDarkToolBar::trUtf8(const char *, const char *, int)",
+      "name": "GIPCoolDarkToolBar::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0D108C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPControls\\GIPDialog.h",
+        "line": 29,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GIPCoolDarkToolBar(QWidget *)",
+      "name": "GIPCoolDarkToolBar(QWidget *)",
+      "return_type": "<clang.cindex.Type object at 0x00000258EC615B40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPControls\\GIPDialog.h",
+        "line": 31,
+        "column": 11
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "~GIPCoolDarkToolBar()",
+      "name": "~GIPCoolDarkToolBar()",
+      "return_type": "<clang.cindex.Type object at 0x00000258EC615B40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GIPControls\\GIPDialog.h",
+        "line": 32,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "IGMPPDFViewWidget::tr(const char *, const char *, int)",
+      "name": "IGMPPDFViewWidget::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x0000025898A09AC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\IGMPPDFViewInterface.h",
+        "line": 20,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "IGMPPDFViewWidget::trUtf8(const char *, const char *, int)",
+      "name": "IGMPPDFViewWidget::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258833154C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\IGMPPDFViewInterface.h",
+        "line": 20,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "IGMPPDFViewWidget(QWidget *)",
+      "name": "IGMPPDFViewWidget(QWidget *)",
+      "return_type": "<clang.cindex.Type object at 0x0000025898A50AC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\IGMPPDFViewInterface.h",
+        "line": 38,
+        "column": 2
+      },
+      "called_functions": [
+        "GIPCoolDarkWidget(QWidget *)"
+      ],
+      "body": "{}"
+    },
+    {
+      "node_id": "~IGMPPDFViewWidget()",
+      "name": "~IGMPPDFViewWidget()",
+      "return_type": "<clang.cindex.Type object at 0x0000025898A52140>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\IGMPPDFViewInterface.h",
+        "line": 39,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "IGMPPDFViewWidget::getPageRender()",
+      "name": "IGMPPDFViewWidget::getPageRender()",
+      "return_type": "<clang.cindex.Type object at 0x0000025898A1FB40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\IGMPPDFViewInterface.h",
+        "line": 44,
+        "column": 28
+      },
+      "called_functions": [],
+      "body": "{ return nullptr; }"
+    },
+    {
+      "node_id": "IGMPPDFViewWidget::getPageViewWidget()",
+      "name": "IGMPPDFViewWidget::getPageViewWidget()",
+      "return_type": "<clang.cindex.Type object at 0x0000025898A4A6C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\IGMPPDFViewInterface.h",
+        "line": 45,
+        "column": 32
+      },
+      "called_functions": [],
+      "body": "{ return nullptr; }"
+    },
+    {
+      "node_id": "GMPPDFViewWidget::tr(const char *, const char *, int)",
+      "name": "GMPPDFViewWidget::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x0000025898A11FC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 34,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPDFViewWidget::trUtf8(const char *, const char *, int)",
+      "name": "GMPPDFViewWidget::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0BB5440>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 34,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPDFViewWidget::getPageViewWidget()",
+      "name": "GMPPDFViewWidget::getPageViewWidget()",
+      "return_type": "<clang.cindex.Type object at 0x00000258A0C378C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 43,
+        "column": 32
+      },
+      "called_functions": [],
+      "body": "{ return m_pPageViewWgt; }"
+    },
+    {
+      "node_id": "GMPPDFViewWidget::toolBar()",
+      "name": "GMPPDFViewWidget::toolBar()",
+      "return_type": "<clang.cindex.Type object at 0x00000258E1F541C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 44,
+        "column": 29
+      },
+      "called_functions": [],
+      "body": "{ return m_pToolBar; }"
+    },
+    {
+      "node_id": "GMPPDFViewWidget::getScrollArea()",
+      "name": "GMPPDFViewWidget::getScrollArea()",
+      "return_type": "<clang.cindex.Type object at 0x0000025883359040>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 51,
+        "column": 23
+      },
+      "called_functions": [],
+      "body": "{ return m_pScrollArea; }"
+    },
+    {
+      "node_id": "GMPPDFPageViewWidget::tr(const char *, const char *, int)",
+      "name": "GMPPDFPageViewWidget::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258C2DFD140>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 107,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPDFPageViewWidget::trUtf8(const char *, const char *, int)",
+      "name": "GMPPDFPageViewWidget::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258F245F640>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 107,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "~GMPPDFPageViewWidget()",
+      "name": "~GMPPDFPageViewWidget()",
+      "return_type": "<clang.cindex.Type object at 0x00000258F00F05C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 110,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GMPPDFPageViewWidget::getPage()",
+      "name": "GMPPDFPageViewWidget::getPage()",
+      "return_type": "<clang.cindex.Type object at 0x00000258F015A740>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 113,
+        "column": 6
+      },
+      "called_functions": [],
+      "body": "{ return m_pageIndex; }"
+    },
+    {
+      "node_id": "GMPPDFPageViewWidget::getFitType()",
+      "name": "GMPPDFPageViewWidget::getFitType()",
+      "return_type": "<clang.cindex.Type object at 0x00000258F015A7C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 114,
+        "column": 32
+      },
+      "called_functions": [],
+      "body": "{ return m_fitType; }"
+    },
+    {
+      "node_id": "GMPPDFPageViewWidget::copyEnable()",
+      "name": "GMPPDFPageViewWidget::copyEnable()",
+      "return_type": "<clang.cindex.Type object at 0x0000025883307BC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 119,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{ return m_bCopyEnabled; }"
+    },
+    {
+      "node_id": "GMPPDFPageViewWidget::isPicking()",
+      "name": "GMPPDFPageViewWidget::isPicking()",
+      "return_type": "<clang.cindex.Type object at 0x00000258F245F040>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Feature\\GMPPDFViewWidget.h",
+        "line": 123,
+        "column": 7
+      },
+      "called_functions": [],
+      "body": "{ return m_isPicking; }"
+    },
+    {
+      "node_id": "IGMPPDFViewDrawer::tr(const char *, const char *, int)",
+      "name": "IGMPPDFViewDrawer::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258F01A4340>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Picker\\Drawer\\GMPPDFViewDrawer.h",
+        "line": 11,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "IGMPPDFViewDrawer::trUtf8(const char *, const char *, int)",
+      "name": "IGMPPDFViewDrawer::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258EC68C440>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Picker\\Drawer\\GMPPDFViewDrawer.h",
+        "line": 11,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "~IGMPPDFViewDrawer()",
+      "name": "~IGMPPDFViewDrawer()",
+      "return_type": "<clang.cindex.Type object at 0x00000258F01A5940>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Picker\\Drawer\\GMPPDFViewDrawer.h",
+        "line": 14,
+        "column": 10
+      },
+      "called_functions": [],
+      "body": "{}"
+    },
+    {
+      "node_id": "GMPPDFViewRectDrawer::tr(const char *, const char *, int)",
+      "name": "GMPPDFViewRectDrawer::tr(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258F01A7340>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Picker\\Drawer\\GMPPDFViewRectDrawer.h",
+        "line": 7,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPDFViewRectDrawer::trUtf8(const char *, const char *, int)",
+      "name": "GMPPDFViewRectDrawer::trUtf8(const char *, const char *, int)",
+      "return_type": "<clang.cindex.Type object at 0x00000258F00F05C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Include\\GMPPDFEngine\\Picker\\Drawer\\GMPPDFViewRectDrawer.h",
+        "line": 7,
+        "column": 2
+      },
+      "called_functions": [],
+      "body": "Q_OBJECT"
+    },
+    {
+      "node_id": "GMPPDFViewRectDrawerEx(GMPPdfDragBoxSelector *)",
+      "name": "GMPPDFViewRectDrawerEx(GMPPdfDragBoxSelector *)",
+      "return_type": "<clang.cindex.Type object at 0x00000258833591C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 23,
+        "column": 25
+      },
+      "called_functions": [
+        "GMPPDFViewRectDrawer(IGMPCommandManager *)"
+      ],
+      "body": "{\n\n}"
+    },
+    {
+      "node_id": "~GMPPDFViewRectDrawerEx()",
+      "name": "~GMPPDFViewRectDrawerEx()",
+      "return_type": "<clang.cindex.Type object at 0x00000258833AEBC0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 29,
+        "column": 25
+      },
+      "called_functions": [],
+      "body": "{\n\t\n}"
+    },
+    {
+      "node_id": "GMPPDFViewRectDrawerEx::inputCmdLine(const QString &)",
+      "name": "GMPPDFViewRectDrawerEx::inputCmdLine(const QString &)",
+      "return_type": "<clang.cindex.Type object at 0x00000258833AF5C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 34,
+        "column": 30
+      },
+      "called_functions": [
+        "GMPPdfDragBoxSelector::cancel()",
+        "GMPPdfDragBoxSelector::finish()"
+      ],
+      "body": "{\n\tif (c_sPDFViewEscKey == sCmdLine)\n\t\tm_pOwner->cancel();\n\telse if (c_sPDFPickFinish == sCmdLine)\n\t\tm_pOwner->finish();\n}\n\n/*"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector(GMPPDFViewWidget *)",
+      "name": "GMPPdfDragBoxSelector(GMPPDFViewWidget *)",
+      "return_type": "<clang.cindex.Type object at 0x00000258833AD1C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 45,
+        "column": 24
+      },
+      "called_functions": [
+        "GMPPDFViewWidget::setPicking(const bool &)",
+        "GMPPdfDragBoxSelector::setActivePageRender(GMPPDFPageRender *)",
+        "GMPPDFViewWidget::getPageRender()"
+      ],
+      "body": "{\n\tm_pViewWidget->setPicking(true);\n\tsetActivePageRender(m_pViewWidget->getPageRender());\n}\n\nG"
+    },
+    {
+      "node_id": "~GMPPdfDragBoxSelector()",
+      "name": "~GMPPdfDragBoxSelector()",
+      "return_type": "<clang.cindex.Type object at 0x00000258833AF9C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 52,
+        "column": 24
+      },
+      "called_functions": [
+        "GMPPDFViewWidget::setPicking(const bool &)",
+        "GMPPdfDragBoxSelector::clearDrawRects()"
+      ],
+      "body": "{\n\tm_pViewWidget->setPicking(false);\n\tclearDrawRects();\n\tdelete m_pViewDrawer;\n}\n\nvo"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::setActivePageRender(GMPPDFPageRender *)",
+      "name": "GMPPdfDragBoxSelector::setActivePageRender(GMPPDFPageRender *)",
+      "return_type": "<clang.cindex.Type object at 0x00000258FB1843C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 59,
+        "column": 29
+      },
+      "called_functions": [],
+      "body": "{\n\tm_pActivePageRender = pActivePageRender;\n}"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::activePageRender()",
+      "name": "GMPPdfDragBoxSelector::activePageRender()",
+      "return_type": "<clang.cindex.Type object at 0x00000258FB186940>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 64,
+        "column": 42
+      },
+      "called_functions": [],
+      "body": "{\n\treturn m_pActivePageRender;\n}"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::activePDFView()",
+      "name": "GMPPdfDragBoxSelector::activePDFView()",
+      "return_type": "<clang.cindex.Type object at 0x00000258FB185540>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 69,
+        "column": 42
+      },
+      "called_functions": [],
+      "body": "{\n\treturn m_pViewWidget;\n}"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::pickedResult()",
+      "name": "GMPPdfDragBoxSelector::pickedResult()",
+      "return_type": "<clang.cindex.Type object at 0x00000258FB187540>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 74,
+        "column": 52
+      },
+      "called_functions": [],
+      "body": "{\n\treturn m_oClipedImages;\n}"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::pickedResultImages()",
+      "name": "GMPPdfDragBoxSelector::pickedResultImages()",
+      "return_type": "<clang.cindex.Type object at 0x00000258F24F8640>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 79,
+        "column": 38
+      },
+      "called_functions": [
+        "GMPPDFViewClipedData(const GMPPDFViewClipedData &)"
+      ],
+      "body": "{\n\tQList<QImage> Result;\n\tfor (auto oItem : m_oClipedImages)\n\t\tResult.append(oItem.clipedImage);\n\treturn Result;\n}\n\nvoi"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::start()",
+      "name": "GMPPdfDragBoxSelector::start()",
+      "return_type": "<clang.cindex.Type object at 0x00000258833AE1C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 87,
+        "column": 29
+      },
+      "called_functions": [
+        "GMPPDFViewRectDrawerEx(GMPPdfDragBoxSelector *)",
+        "IGMPPDFViewDrawer::setPdfDrawCanvas(GMPPDFViewWidget *, GMPPDFPageRender *)",
+        "GMPPDFViewWidget::getPageRender()"
+      ],
+      "body": "{\n\tif (!m_pViewDrawer)\n\t{\n\t\tm_pViewDrawer = new GMPPDFViewRectDrawerEx(this);\n\t}\n\t\n\tm_pViewDrawer->setPdfDrawCanvas(m_pViewWidget, m_pViewWidget->getPageRender());\n}\n\nvoid"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::finish()",
+      "name": "GMPPdfDragBoxSelector::finish()",
+      "return_type": "<clang.cindex.Type object at 0x00000258833AFD40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 97,
+        "column": 29
+      },
+      "called_functions": [
+        "GMPPDFViewClipedData()",
+        "GMPPDFPageRender::pageNum()",
+        "GMPPdfClipImage(const GMPPdfClipImage &)",
+        "GMPPDFViewClipedData(const GMPPDFViewClipedData &)",
+        "GMPPdfDragBoxSelector::clearDrawRects()",
+        "GMPPdfDragBoxSelector::onFinish()"
+      ],
+      "body": "{\n\tGMPPDFViewClipedData oCommonData;\n\toCommonData.fileGuid = m_pActivePageRender->getDocument()->uniqueKey();\n\toCommonData.pageIndex = m_pActivePageRender->pageNum();\n\toCommonData.resolution = m_fResolution;\n\tQImage grayImage = activePageRender()->denormalImage(m_fResolution).convertToFormat(QImage::Format_Grayscale8);\n\tQList<GMPPdfClipImage> lstImage = GMPPDFCliper().cliper(grayImage, activePageRender()->getDenormalRects(activePDFView()->getPageViewWidget(), m_fResolution));\n\tfor (GMPPdfClipImage oClipImg : lstImage)\n\t{\n\t\tGMPPDFViewClipedData oTempData = oCommonData;\n\t\toTempData.clipedRegion = oClipImg.m_rect;\n\t\toTempData.clipedImage = oClipImg.m_image;\n\t\tm_oClipedImages.append(oTempData);\n\t}\n\tclearDrawRects();\n\n\temit onFinish();\n}\n\nvoid GMPPdfDrag"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::cancel()",
+      "name": "GMPPdfDragBoxSelector::cancel()",
+      "return_type": "<clang.cindex.Type object at 0x00000258833AEB40>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 117,
+        "column": 29
+      },
+      "called_functions": [
+        "GMPPdfDragBoxSelector::clearDrawRects()",
+        "GMPPdfDragBoxSelector::onCancel()"
+      ],
+      "body": "{\n\tm_oClipedImages.clear();\n\tclearDrawRects();\n\n\temit onCancel();\n}\n\nvoi"
+    },
+    {
+      "node_id": "GMPPdfDragBoxSelector::clearDrawRects()",
+      "name": "GMPPdfDragBoxSelector::clearDrawRects()",
+      "return_type": "<clang.cindex.Type object at 0x00000258833AD9C0>",
+      "location": {
+        "file": "E:\\GIP\\GIP\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp",
+        "line": 125,
+        "column": 29
+      },
+      "called_functions": [
+        "GMPPDFPageRender::clearDraws()",
+        "GMPPdfDragBoxSelector::activePageRender()"
+      ],
+      "body": "{\n\tactivePageRender()->clearDraws();\n\tactivePDFView()->getPageViewWidget()->repaint();\n}"
+    }
+  ],
+  "compile_args": [
+    "C:\\PROGRA~2\\MIB055~1\\2019\\PROFES~1\\VC\\Tools\\MSVC\\1429~1.301\\bin\\Hostx64\\x64\\cl.exe",
+    "-std=c++14",
+    "-DWIN32_LEAN_AND_MEAN",
+    "-fms-compatibility",
+    "-fms-extensions",
+    "/nologo",
+    "/TP",
+    "-DANTIDEBUG",
+    "-DGDP_QT",
+    "-DGMPPDFENGINE_LIB",
+    "-DGMPPDFEngine_EXPORTS",
+    "-DNOMINMAX",
+    "-DQT_CORE_LIB",
+    "-DQT_DLL",
+    "-DQT_GUI_LIB",
+    "-DQT_NETWORK_LIB",
+    "-DQT_NO_DEBUG",
+    "-DQT_SVG_LIB",
+    "-DQT_WIDGETS_LIB",
+    "-DUNICODE",
+    "-D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS",
+    "-D_UNICODE",
+    "-IE:\\GIP\\GIP\\build_ninja\\GMPPDFEngine\\GMPPDFEngine_autogen\\include",
+    "-IE:\\GIP\\GIP\\BuildTools\\CMake\\..\\..\\Include\\GMPPDFEngine",
+    "-IE:\\GIP\\GIP\\BuildTools\\CMake\\..\\..\\GMA\\include",
+    "-IE:\\GIP\\GIP\\BuildTools\\CMake\\..\\..\\Include",
+    "-IE:\\GIP\\GIP\\BuildTools\\CMake\\..\\..\\Include\\GIPCommon",
+    "-IE:\\GIP\\GIP\\BuildTools\\CMake\\..\\..\\Include\\GIPControls",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\Qt\\x64\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\Qt\\x64\\include\\QtCore",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\Qt\\x64\\.\\mkspecs\\win32-msvc2015",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\Qt\\x64\\include\\QtGui",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\Qt\\x64\\include\\QtWidgets",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\Qt\\x64\\include\\QtNetwork",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\Qt\\x64\\include\\QtSvg",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GBIM\\..\\GBIM\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GBIM\\..\\GBIM\\Externals\\GTF\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GBIM\\Externals\\GTF\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GBIM\\Tools\\GGPViewerProxy\\Source",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GMPUIStyle",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GHS",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GRP7",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GLD",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\GLDTechPlatform\\include\\Intf",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GLD\\GLDDockPanel",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GSP",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GUC",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GSC\\ANTI",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\GLDTechPlatform\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GRE",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GRPGGDB",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\GLDTechPlatform\\include\\Impl",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GRP",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\Glodon\\include\\GTF",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\ThirdPart\\QtitanRibbon\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GlodonResource\\ThirdPart\\VMProtect\\..\\..\\Glodon\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\Externals\\GGDB\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\Externals\\Log\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\Externals\\Licence\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\MuPDF\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMCommon",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMPGeometry",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMPControls",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMModel",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMPProject",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMPWidgets",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMPCore",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GCADModel",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMPUbc",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GTCADImporter",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMPCADDrawingCore",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMPCloud",
+    "-isystem",
+    "E:\\GIP\\GIP\\Externals\\GMP\\include\\GMPCloudService",
+    "/DWIN32",
+    "/D_WINDOWS",
+    "/W3",
+    "/GR",
+    "/EHsc",
+    "/MP",
+    "/MD",
+    "/Zi",
+    "/O2",
+    "/DNDEBUG",
+    "/EHa",
+    "/FoGMPPDFEngine\\CMakeFiles\\GMPPDFEngine.dir\\E_\\gip\\Source\\GMPPDFEngine\\Picker\\GMPPdfDragBoxSelector.cpp.obj",
+    "/FdTARGET_COMPILE_PDB",
+    "/FS",
+    "-c"
+  ]
+}

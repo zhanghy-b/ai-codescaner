@@ -1,0 +1,8 @@
+{
+    "user_bert" : false,
+    "model_name": "microsoft/graphcodebert-base",
+    "scan_report_output": "./result/code_invalidity_report.json",
+    "similarity_threshold": 0.95,
+    "max_function_length": 512,
+    "batch_size": 8
+}

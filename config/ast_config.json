@@ -1,0 +1,11 @@
+{
+    "repo_root": "E:/gip/Source",
+    "repo_dest_root": "E:/gip/Source",
+    "codes": ["E:/gip/Source/GIPCalcCore"],
+    "ast_output": "./result/ast_outputs_calccore",
+    "compile_commands_db": "./config/compiledb/compile_commands.json",
+    "parse_ast": false,
+    "parse_func_body": false,
+    "verbose": true,
+    "workers": 10
+}
