@@ -28,7 +28,7 @@ if __name__ == "__main__":
     analyze_config = load_config('config/analyze_config.json')
     cov_config = load_config('config/cov_config.json')
 
-    cov_reachable_funcs = search_cov_reachable_funcs(cov_config)
+    cov_reachable_funcs = search_cov_reachable_funcs(cov_config, True)
     # cov_reachable_funcs.clear()
     # cov_reachable_funcs.append('main(int,char**)')
     scanner = CodeInvalidityScanner(ast_config, scanner_config, cov_reachable_funcs)

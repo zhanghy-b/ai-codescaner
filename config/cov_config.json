@@ -2,5 +2,5 @@
 {
     "cov_xml": "./data/cov.xml",
     "filter_dirs": ["Externals", "GMA", "Tools", "NinjaBuild"],
-    "cov_filter_output_file": "./result/filtered_cov.json"
+    "cov_filter_output_file": "./result/cov_reachable_funcs.json"
 }

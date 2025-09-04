@@ -82,7 +82,7 @@ class CodeInvalidityScanner:
                 reachable_nodes.add(entry)
             else:
                 except_graph_funcs.append(entry)
-        except_graph_funcs_file = Path('./result') / 'except_graph_funcs.json'
+        except_graph_funcs_file = Path('./result') / 'not_in_graph_funcs.json'
         dump(except_graph_funcs, except_graph_funcs_file)
 
         # 不可达节点就是无效代码
@@ -190,8 +190,6 @@ class CodeInvalidityScanner:
             if 'functions' in data:
                 for func in data['functions']:
                     func_name = func['name']
-                    file_path_without_suffix = Path(file_path).parent / Path(file_path).stem
-
                     # 检查函数是否不可达
                     if func_name in unreachable_functions:
                         location = func.get('location', None)
@@ -213,7 +211,7 @@ class CodeInvalidityScanner:
 
         return dead_code
 
-    def generate_report(self, function_call_graph: nx.DiGraph, unreachable_functions: Set[str], similar_functions: List[List[str]], dead_code: Dict[str, List[str]]) -> Dict[str, Any]:
+    def generate_report(self, function_call_graph: nx.DiGraph, unreachable_functions: List[Dict[str, Any]], similar_functions: List[List[str]], dead_code: Dict[str, List[str]]) -> Dict[str, Any]:
         """
         生成无效代码扫描报告
         
@@ -238,7 +236,7 @@ class CodeInvalidityScanner:
                 "total_similar_function_groups": len(similar_functions),
                 "total_dead_code_issues": sum(len(issues) for issues in dead_code.values())
             },
-            "unreachable_functions": list(unreachable_functions),
+            "unreachable_functions": unreachable_functions,
             "similar_function_groups": similar_functions,
             "dead_code": dead_code
         }
@@ -251,8 +249,20 @@ class CodeInvalidityScanner:
             print(f"报告已保存至: {scan_report_file}")
 
         return report
+    
+    def export_unreachable_func_details_datas(self, unreachable_funcs: Set[str], func_call_graph: nx.DiGraph) -> List[Dict[str,Any]]:
+        unreachable_func_detail_datas = []
+        for func_name in unreachable_funcs:
+            if func_call_graph.has_node(func_name):
+                node_attr = func_call_graph.nodes[func_name]
+                location = node_attr.get('location', None)
+                func_details = {}
+                func_details['name'] = func_name
+                func_details['location'] = location
+                unreachable_func_detail_datas.append(func_details)
+        return unreachable_func_detail_datas
 
-    def run(self, cov_reachable_funcs: List[str]) -> Dict[str, Any]:
+    def run(self) -> Dict[str, Any]:
         """
         运行代码无效性扫描
 
@@ -265,10 +275,12 @@ class CodeInvalidityScanner:
         if not function_call_graph:
             return {}
 
-        report = self.analyze(ast_results)
+        report = self.analyze(ast_results, function_call_graph)
         return report
     
-    def analyze(self, ast_results, function_call_graph):
+    def analyze(self, ast_results, function_call_graph: nx.DiGraph):
+        if self.verbose:
+            print(f'function call graph has {len(function_call_graph.nodes)} nodes.')
         unreachable_functions = self.detect_unreachable_functions(function_call_graph)
         #删除Qt MOC生成的函数及析构函数
         unreachable_functions = remove_qt_moc_func(unreachable_functions)
@@ -276,7 +288,8 @@ class CodeInvalidityScanner:
         if self.verbose:
             print(f"检测到 {len(unreachable_functions)} 个不可达函数")
 
-        dump(unreachable_functions, Path('./result') / 'unreachable_funcs.json')
+        unreachable_detail_functions = self.export_unreachable_func_details_datas(unreachable_functions, function_call_graph)
+        dump(unreachable_detail_functions, Path('./result') / 'unreachable_funcs.json')
 
         # 步骤4: 为函数生成嵌入向量
         # self.generate_function_embeddings(ast_results)
@@ -290,7 +303,7 @@ class CodeInvalidityScanner:
         # 步骤7: 生成报告
         report = self.generate_report(
             function_call_graph,
-            unreachable_functions,
+            unreachable_detail_functions,
             # similar_functions,
             [],
             dead_code

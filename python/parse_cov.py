@@ -102,7 +102,7 @@ def parse_cov_filter_func(cov_config: Dict[str, Any])->List[str]:
         print(f"写入JSON文件时出错: {str(e)}", file=sys.stderr)
         return []
 
-def modify_func_name(zero_cov_srcs: List) -> Optional[str]:
+def repair_func_name(zero_cov_srcs: List) -> Optional[str]:
     results = []
     for src in zero_cov_srcs:
         func_name = src.split('/')[-1]
@@ -121,9 +121,12 @@ def modify_func_name(zero_cov_srcs: List) -> Optional[str]:
             results.append(func_name)
     return results
 
-def search_cov_reachable_funcs(cov_config: Dict[str, Any]) -> List[str]:
+def search_cov_reachable_funcs(cov_config: Dict[str, Any], verbose: bool) -> List[str]:
     coverage_reach_funcs = parse_cov_filter_func(cov_config)
-    extract_func_results = modify_func_name(coverage_reach_funcs)
+    extract_func_results = repair_func_name(coverage_reach_funcs)
+    if verbose:
+        from utils import dump
+        dump(extract_func_results, Path('./result') / 'cov_reachable_repair_funcs.json')
     return extract_func_results
 
 if __name__ == "__main__":
@@ -131,7 +134,7 @@ if __name__ == "__main__":
     # coverage_reach_funcs = parse_cov_filter_func(cov_config)
 
     coverage_reach_srcs = load_config('./result/filtered_cov.json')
-    extract_func_results = modify_func_name(coverage_reach_srcs)
+    extract_func_results = repair_func_name(coverage_reach_srcs)
     from utils import dump
     dump(extract_func_results, Path('./result') / 'modify_cov_funcs.json')
     
