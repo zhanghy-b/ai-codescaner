@@ -157,23 +157,16 @@ class DiGraphSerializer:
         # 解析AST
         ast_file_paths = Path(ast_file_dir).rglob('*.ast.json')
         ast_results = []
+        from utils import load_config
         for ast_file_path in ast_file_paths:
             ast_data = load_config(ast_file_path)
             if ast_data:
                 ast_results.append(ast_data)
 
-        from clang_ast_generator_threadpool import ThreadPoolClangASTGenerator, load_config
-        config = load_config('ast_config.json')
+        from clang_ast_generator_threadpool import ThreadPoolClangASTGenerator
+        config = load_config('./config/ast_config.json')
         generator = ThreadPoolClangASTGenerator(
-            config['repo_root'],
-            config['repo_dest_root'],
-            config['codes'],
-            config.get('ast_output', None),
-            config.get('parse_ast', False),
-            config.get('parse_func_body', False),
-            config.get('verbose', False),
-            config.get('compile_commands_db', None),
-            config.get('workers', 1)
+            config 
         )
 
         import time

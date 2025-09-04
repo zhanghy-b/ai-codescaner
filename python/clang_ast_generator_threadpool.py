@@ -257,34 +257,28 @@ class ThreadPoolClangASTGenerator:
         function_map = {}  # map from function name to function info
         current_function = None  # track current function being analyzed
         
-        def traverse(node):
+        def traverse(node: clang.cindex.Cursor):
             nonlocal current_function
-            
-            # check if current node is a function declaration or method
+            # if node.kind == clang.cindex.CursorKind.UNEXPOSED_EXPR:
+            #     node = list(node.get_children())[0] if len(list(node.get_children())) > 0 else node
+            #     if node.kind in [clang.cindex.CursorKind.MEMBER_REF_EXPR]:
+            #         node = node.referenced
             if node.kind in [clang.cindex.CursorKind.FUNCTION_DECL, clang.cindex.CursorKind.CXX_METHOD, 
                              clang.cindex.CursorKind.CONSTRUCTOR, clang.cindex.CursorKind.DESTRUCTOR]:
                 func_name = parse_cursor_func_node(node)
-
                 func_info = {
                     'name': func_name,
-                    # 'return_type': str(node.type.get_result()),
                     'location': {
                         'file': transfer_file_path(str(Path(node.location.file.name).resolve()) if node.location.file else None, 
                                                    self.repo_root, self.repo_dest_root),
                         'line': node.location.line,
-                        # 'column': node.location.column
                     },
-                    # 'parameters': [],
                     'called_functions': [],  # add called functions list
                     'body': ''  # add function body field
                 }
                 node_id = generator_func_node_id(func_info)
                 func_info['name'] = node_id
-
-                # if node_id.find('test') != -1 or node_id.find('calc4') != -1:
-                #     print('...')
                 
-                # extract parameters and function body
                 function_body = ''
                 for child in node.get_children():
                     if child.kind == clang.cindex.CursorKind.COMPOUND_STMT:
@@ -322,7 +316,12 @@ class ThreadPoolClangASTGenerator:
             
             # check if current node is a function call
             elif node.kind == clang.cindex.CursorKind.CALL_EXPR and current_function is not None:
-                # get the called function name
+                name = current_function['name']
+                if name.find('GIPBridgeBeamCustomEditor::createCentralWidget') != -1:
+                    if node.location and node.location.file:
+                        line = node.location.line
+                        file_name = Path(node.location.file.name).stem
+                    print('debug')
                 if node.spelling == 'connect':
                     signal_info = self._extract_qt_connect_info(node)
                     if signal_info:
@@ -333,9 +332,6 @@ class ThreadPoolClangASTGenerator:
                             current_function['emitted_signals'] = []
                         current_function['emitted_signals'].append(signal_slot_map)
                 else:
-                    name = current_function['name']
-                    # if name.find('GMPPDFCustomRectRender::render') != -1:
-                    #     print('---')
                     called_func_name = parse_cursor_call_func_node(node)
                     if called_func_name:
                         current_function['called_functions'].append(called_func_name)
@@ -487,15 +483,6 @@ class ThreadPoolClangASTGenerator:
         return all_results
     
     def build_function_call_graph(self, ast_results: List[Dict[str, Any]]) -> nx.DiGraph:
-        """
-        基于Clang AST结果构建函数调用图
-        
-        Args:
-            ast_results: Clang AST分析结果
-
-        Returns:
-            nx.DiGraph: 函数调用有向图
-        """
         graph = nx.DiGraph()
         nodes = set()
         # 遍历所有文件的函数信息
@@ -528,6 +515,7 @@ class ThreadPoolClangASTGenerator:
                                         graph.add_node(slot)
                                     graph.add_edge(signal, slot)
 
+        unadd_call_funcs = []
         for file_data in ast_results:
             data = file_data
             if 'functions' in data:
@@ -540,10 +528,14 @@ class ThreadPoolClangASTGenerator:
                             if graph.has_node(called_func_id):
                                 graph.add_edge(func_id, called_func_id)
                             else:
-                                if self.verbose:
-                                    print(f"Warning: called function {called_func_id} not found in graph nodes.")
+                                unadd_call_funcs.append(called_func_id)
+                                
         if self.verbose:
             print(f"构建完成函数调用图，包含 {len(graph.nodes)} 个节点和 {len(graph.edges)} 条边")
+            if len(unadd_call_funcs) > 0:
+                unadd_call_funcs_file = Path('./result') / 'unadd_graphy_call_functions.json'
+                print(f"Warning: Total {len(unadd_call_funcs)} called functions not add graph nodes, please check {unadd_call_funcs_file}")
+                dump(unadd_call_funcs, unadd_call_funcs_file)
 
         return graph
     

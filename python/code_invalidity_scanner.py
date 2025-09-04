@@ -82,7 +82,7 @@ class CodeInvalidityScanner:
                 reachable_nodes.add(entry)
             else:
                 except_graph_funcs.append(entry)
-        except_graph_funcs_file = Path('./result') / 'not_in_graph_funcs.json'
+        except_graph_funcs_file = Path('./result') / 'cov_reachable_funcs_not_in_graph.json'
         dump(except_graph_funcs, except_graph_funcs_file)
 
         # 不可达节点就是无效代码
